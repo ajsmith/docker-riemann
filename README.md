@@ -1,27 +1,27 @@
 # docker-riemann
 
-This project builds a Riemann docker image.
+This project provides resources for deploying Riemann in Docker containers.
 
-# Supported Platforms
+## Supported Platforms
 
 RHEL6
 
-# Dependencies
+## Dependencies
 
 EPEL for RHEL6
 
-# Building
+## Building
 
 Simply run:
 
     $ docker build -t riemann .
 
-# Launching Riemann
+## Launching Riemann
 
 Simply run:
 
     $ docker run -P riemann /usr/bin/riemann
 
-# Networking
+## Networking
 
 The Riemann image exposes port 5555 to accept events from clients.
