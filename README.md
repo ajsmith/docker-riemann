@@ -20,8 +20,12 @@ Simply run:
 
 Simply run:
 
-    $ docker run -P riemann /usr/bin/riemann
+    $ docker run -P riemann
 
 ## Networking
 
 The Riemann image exposes port 5555 to accept events from clients.
+
+## Entrypoints
+
+The Riemann image defines an entrypoint which runs `/usr/bin/riemann`.

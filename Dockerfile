@@ -4,3 +4,5 @@ RUN yum install -y --disablerepo=* --enablerepo=rhel-6-server-rpms https://dl.fe
 RUN yum install -y --disablerepo=* --enablerepo=rhel-6-server-rpms --enablerepo=epel https://aphyr.com/riemann/riemann-0.2.10-1.noarch.rpm
 
 EXPOSE 5555
+
+ENTRYPOINT ["/usr/bin/riemann"]
