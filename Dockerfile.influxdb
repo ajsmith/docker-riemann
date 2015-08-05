@@ -1,3 +1,0 @@
-FROM riemann
-
-COPY influxdb/riemann.config /etc/riemann/riemann.config
