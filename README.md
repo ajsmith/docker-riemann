@@ -12,7 +12,7 @@ EPEL for RHEL6
 
 ## Building
 
-Simply run:
+To build the base Riemann image, run:
 
     $ docker build -t riemann .
 
@@ -21,6 +21,20 @@ Simply run:
 Simply run:
 
     $ docker run -P riemann
+
+## Graphite Forwarding
+
+Graphite forwarding is configured by adding an image on top of the base Riemann
+image:
+
+    $ cd graphite
+    $ docker build -t riemann-graphite .
+
+This image expects to communicate with the Graphite host using the hostname
+"graphite". If Graphite is running as another container, you could link Riemann
+as so:
+
+    $ docker run -d -P --link graphite:graphite --name riemann-graphite riemann-graphite
 
 ## Networking
 
