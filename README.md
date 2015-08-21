@@ -1,44 +1,72 @@
 # docker-riemann
 
-This project provides resources for deploying Riemann in Docker containers.
+This project provides resources for deploying Riemann in Docker.
 
-## Supported Platforms
+## Image Platform
 
 RHEL6
 
-## Dependencies
+## Image Dependencies
 
 EPEL for RHEL6
+Riemann RPM from <http://riemann.io>
 
 ## Building
 
-To build the base Riemann image, run:
+To build the Riemann image, run:
 
-    $ docker build -t riemann .
+```shell
+$ docker build -t riemann .
+```
 
 ## Launching Riemann
 
-Simply run:
+To launch Riemann, run:
 
-    $ docker run -P riemann
+```shell
+$ docker run riemann
+```
 
 ## Graphite Forwarding
 
-Graphite forwarding is configured by adding an image on top of the base Riemann
-image:
+To enable Graphite forwarding, copy the graphite configuration file from the
+"optional" directory and rebuild the image:
 
-    $ cd graphite
-    $ docker build -t riemann-graphite .
+```shell
+$ cp optional/graphite.clj riemann.d/
+$ docker build -t riemann-graphite .
+```
 
 This image expects to communicate with the Graphite host using the hostname
 "graphite". If Graphite is running as another container, you could link Riemann
 as so:
 
-    $ docker run -d -P --link graphite:graphite --name riemann-graphite riemann-graphite
+```shell
+$ docker run -d --link graphite:graphite --name riemann-graphite riemann-graphite
+```
+
+## InfluxDB Forwarding
+
+To enable InfluxDB forwarding, copy the InfluxDB configuration file from the
+"optional" directory and rebuild the image:
+
+```shell
+$ cp optional/influxdb.clj riemann.d/
+$ docker build -t riemann-influxdb .
+```
+
+This image expects to communicate with the InfluxDB host using the hostname
+"influxdb". If InfluxDB is running as another container, you could link Riemann
+as so:
+
+```shell
+$ docker run -d --link influxdb:influxdb --name riemann-influxdb riemann-influxdb
+```
 
 ## Networking
 
-The Riemann image exposes port 5555 to accept events from clients.
+The Riemann image exposes port 5555 to accept events from clients and port 5556
+for the websocket server.
 
 ## Entrypoints
 
