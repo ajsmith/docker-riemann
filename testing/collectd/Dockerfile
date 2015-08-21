@@ -5,7 +5,6 @@ RUN yum install -y --disablerepo=* --enablerepo=rhel-7-server-rpms https://dl.fe
 RUN yum install -y --disablerepo=* --enablerepo=rhel-7-server-rpms --enablerepo=epel procps-ng iproute iputils net-tools tcpdump collectd collectd-write_riemann
 
 COPY collectd.conf /etc/collectd.conf
-COPY cpu.conf /etc/collectd.d/cpu.conf
-COPY write_riemann.conf /etc/collectd.d/write_riemann.conf
+COPY collectd.d /etc/collectd.d
 
 ENTRYPOINT ["/sbin/collectd", "-f"]
