@@ -6,6 +6,6 @@ RUN yum install -y --disablerepo=* --enablerepo=rhel-6-server-rpms --enablerepo=
 COPY riemann.conf /etc/riemann.conf
 COPY riemann.d /etc/riemann.d
 
-EXPOSE 5555
+EXPOSE 5555 5556
 
 ENTRYPOINT ["/usr/bin/riemann"]
