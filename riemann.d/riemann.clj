@@ -15,8 +15,4 @@
   (streams
     (default :ttl 60
       ; Index all events immediately.
-      index
-
-      ; Log expired events.
-      (expired
-        (fn [event] (info "expired" event))))))
+      index)))
