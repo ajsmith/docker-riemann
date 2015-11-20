@@ -1,7 +1,5 @@
 ; Base Riemann configuration
 
-(logging/init {:file "/var/log/riemann/riemann.log"})
-
 ; Listen on the local interface over TCP (5555), UDP (5555), and websockets
 ; (5556)
 (let [host "0.0.0.0"]
