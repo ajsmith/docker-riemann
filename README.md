@@ -5,19 +5,26 @@ Red Hat Enterprise Linux.
 
 ## Base Images
 
+- Fedora 24
 - RHEL 7.2
 
 # Requirements
 
-Building the RHEL version of the image requires an active subscription for Red
-Hat Enterprise Linux Server.
+Building the RHEL version of the image requires an active subscription for
+Fedora and Red Hat Enterprise Linux Server.
 
 ## Building
 
-To build the Riemann image, run:
+To build the Fedora image, run:
 
 ```.shell
-$ docker build -t riemann .
+$ docker build -t riemann:fedora -f Dockerfile.fedora .
+```
+
+To build the RHEL image, run:
+
+```.shell
+$ docker build -t riemann:rhel -f Dockerfile.rhel .
 ```
 
 ## Launching Riemann
