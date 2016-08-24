@@ -1,21 +1,22 @@
 # docker-riemann
 
-This project provides resources for deploying Riemann in Docker.
+This project provides resources for deploying Riemann in Docker on Fedora and
+Red Hat Enterprise Linux.
 
-## Image Platform
+## Base Images
 
-RHEL6
+- RHEL 7.2
 
-## Image Dependencies
+# Requirements
 
-EPEL for RHEL6
-Riemann RPM from <http://riemann.io>
+Building the RHEL version of the image requires an active subscription for Red
+Hat Enterprise Linux Server.
 
 ## Building
 
 To build the Riemann image, run:
 
-```shell
+```.shell
 $ docker build -t riemann .
 ```
 
@@ -23,7 +24,7 @@ $ docker build -t riemann .
 
 To launch Riemann, run:
 
-```shell
+```.shell
 $ docker run riemann
 ```
 
@@ -32,7 +33,7 @@ $ docker run riemann
 To enable Graphite forwarding, copy the graphite configuration file from the
 "optional" directory and rebuild the image:
 
-```shell
+```.shell
 $ cp optional/graphite.clj riemann.d/
 $ docker build -t riemann-graphite .
 ```
@@ -41,7 +42,7 @@ This image expects to communicate with the Graphite host using the hostname
 "graphite". If Graphite is running as another container, you could link Riemann
 as so:
 
-```shell
+```.shell
 $ docker run -d --link graphite:graphite --name riemann-graphite riemann-graphite
 ```
 
@@ -50,7 +51,7 @@ $ docker run -d --link graphite:graphite --name riemann-graphite riemann-graphit
 To enable InfluxDB forwarding, copy the InfluxDB configuration file from the
 "optional" directory and rebuild the image:
 
-```shell
+```.shell
 $ cp optional/influxdb.clj riemann.d/
 $ docker build -t riemann-influxdb .
 ```
@@ -59,18 +60,14 @@ This image expects to communicate with the InfluxDB host using the hostname
 "influxdb". If InfluxDB is running as another container, you could link Riemann
 as so:
 
-```shell
+```.shell
 $ docker run -d --link influxdb:influxdb --name riemann-influxdb riemann-influxdb
 ```
 
 ## Networking
 
-The Riemann image exposes port 5555 to accept events from clients and port 5556
-for the websocket server.
-
-## Entrypoints
-
-The Riemann image defines an entrypoint which runs `/usr/bin/riemann`.
+The Riemann image exposes port 5555 for client connections and port 5556 for
+websockets.
 
 ## Releases
 
