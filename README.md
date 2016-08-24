@@ -71,3 +71,14 @@ for the websocket server.
 ## Entrypoints
 
 The Riemann image defines an entrypoint which runs `/usr/bin/riemann`.
+
+## Releases
+
+### v1.1.0
+
+- Upgrade to RHEL 7.2.
+- Upgrade to Riemann
+
+### v1.0.0
+
+- Initial release on RHEL 6.7 and Riemann 0.2.10.
