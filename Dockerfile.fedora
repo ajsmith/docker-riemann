@@ -6,7 +6,6 @@ RUN dnf install -y https://aphyr.com/riemann/riemann-0.2.11-1.noarch.rpm &&\
     dnf clean all
 
 ADD riemann.config /etc/riemann/riemann.config
-ADD riemann.d /etc/riemann.d
 
 EXPOSE 5555 5556
 
