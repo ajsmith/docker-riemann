@@ -1,19 +1,27 @@
-# docker-riemann
+==============
+docker-riemann
+==============
 
 This project provides resources for deploying Riemann in Docker on Fedora and
 Red Hat Enterprise Linux.
 
-## Base Images
+
+Base Images
+===========
 
 - Fedora 24
 - RHEL 7.2
 
-# Requirements
+
+Requirements
+============
 
 Building the RHEL version of the image requires an active subscription for
 Fedora and Red Hat Enterprise Linux Server.
 
-## Building
+
+Building
+========
 
 To build the Fedora image, run:
 
@@ -35,7 +43,9 @@ To launch Riemann, run:
 $ docker run riemann
 ```
 
-## Graphite Forwarding
+
+Graphite Forwarding
+===================
 
 To enable Graphite forwarding, copy the graphite configuration file from the
 "optional" directory and rebuild the image:
@@ -53,7 +63,9 @@ as so:
 $ docker run -d --link graphite:graphite --name riemann-graphite riemann-graphite
 ```
 
-## InfluxDB Forwarding
+
+InfluxDB Forwarding
+===================
 
 To enable InfluxDB forwarding, copy the InfluxDB configuration file from the
 "optional" directory and rebuild the image:
@@ -71,18 +83,26 @@ as so:
 $ docker run -d --link influxdb:influxdb --name riemann-influxdb riemann-influxdb
 ```
 
-## Networking
+
+Networking
+==========
 
 The Riemann image exposes port 5555 for client connections and port 5556 for
 websockets.
 
-## Releases
 
-### v1.1.0
+Releases
+========
+
+
+v1.1.0
+------
 
 - Upgrade to RHEL 7.2.
 - Upgrade to Riemann
 
-### v1.0.0
+
+v1.0.0
+------
 
 - Initial release on RHEL 6.7 and Riemann 0.2.10.
