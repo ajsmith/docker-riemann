@@ -95,22 +95,22 @@ Releases
 ========
 
 
-v1.2.0
-------
+1.2
+---
 
 - Update default Riemann configuration.
 - Remove collectd test image.
 - Set Riemann user and group explicitly in image.
 
 
-v1.1.0
-------
+1.1
+---
 
 - Upgrade to RHEL 7.2.
 - Upgrade to Riemann 0.2.11.
 
 
-v1.0.0
-------
+1.0
+---
 
 - Initial release on RHEL 6.7 and Riemann 0.2.10.
