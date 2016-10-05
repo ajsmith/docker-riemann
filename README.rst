@@ -99,7 +99,7 @@ v1.1.0
 ------
 
 - Upgrade to RHEL 7.2.
-- Upgrade to Riemann
+- Upgrade to Riemann 0.2.11.
 
 
 v1.0.0
