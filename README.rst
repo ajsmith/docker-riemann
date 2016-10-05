@@ -95,6 +95,13 @@ Releases
 ========
 
 
+v1.2.0
+------
+
+- Update default Riemann configuration.
+- Remove collectd test image.
+
+
 v1.1.0
 ------
 
