@@ -39,6 +39,15 @@ To launch Riemann, run:
 $ docker run riemann
 ```
 
+# Customizing Riemann
+
+The recommended method of customizing Riemann is to mount your own configuration
+files as a volume on the container, as so:
+
+```.shell
+$ docker run -v /path/to/custom/configs:/etc/riemann/ riemann
+```
+
 
 # Networking
 
