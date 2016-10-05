@@ -100,6 +100,7 @@ v1.2.0
 
 - Update default Riemann configuration.
 - Remove collectd test image.
+- Set Riemann user and group explicitly in image.
 
 
 v1.1.0
