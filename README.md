@@ -40,44 +40,6 @@ $ docker run riemann
 ```
 
 
-# Graphite Forwarding
-
-To enable Graphite forwarding, copy the graphite configuration file from the
-"optional" directory and rebuild the image:
-
-```.shell
-$ cp optional/graphite.clj riemann.d/
-$ docker build -t riemann-graphite .
-```
-
-This image expects to communicate with the Graphite host using the hostname
-"graphite". If Graphite is running as another container, you could link Riemann
-as so:
-
-```.shell
-$ docker run -d --link graphite:graphite --name riemann-graphite riemann-graphite
-```
-
-
-# InfluxDB Forwarding
-
-To enable InfluxDB forwarding, copy the InfluxDB configuration file from the
-"optional" directory and rebuild the image:
-
-```.shell
-$ cp optional/influxdb.clj riemann.d/
-$ docker build -t riemann-influxdb .
-```
-
-This image expects to communicate with the InfluxDB host using the hostname
-"influxdb". If InfluxDB is running as another container, you could link Riemann
-as so:
-
-```.shell
-$ docker run -d --link influxdb:influxdb --name riemann-influxdb riemann-influxdb
-```
-
-
 # Networking
 
 The Riemann image exposes port 5555 for client connections and port 5556 for
