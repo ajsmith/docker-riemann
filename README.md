@@ -51,11 +51,19 @@ $ docker run -v /path/to/custom/configs:/etc/riemann/ riemann
 
 # Networking
 
-The Riemann image exposes port 5555 for client connections and port 5556 for
-websockets.
+The Riemann image exposes the following ports:
+
+* 5555 for native clients
+* 5556 for websocket clients
+* 2003 for the Graphite clients
 
 
 # Releases
+
+
+## 1.3
+
+- Expose port 2003 for Graphite clients
 
 
 ## 1.2
