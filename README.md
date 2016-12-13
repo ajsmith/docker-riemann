@@ -64,8 +64,10 @@ The Riemann image exposes the following ports:
 ## 1.3
 
 - Upgrade to Riemann 0.2.12.
-- Upgrade to Fedora 25.
+- Upgrade Fedora image to Fedora 25.
+- Upgrade RHEL image to RHEL 7.3.
 - Expose port 2003 for Graphite clients.
+
 
 ## 1.2
 
