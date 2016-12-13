@@ -63,8 +63,8 @@ The Riemann image exposes the following ports:
 
 ## 1.3
 
-- Expose port 2003 for Graphite clients
-
+- Upgrade to Riemann 0.2.12.
+- Expose port 2003 for Graphite clients.
 
 ## 1.2
 

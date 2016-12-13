@@ -6,7 +6,7 @@ RUN groupadd -g 1001 riemann
 RUN useradd -r -d /var/lib/riemann -u 1001 -g 1001 -s /bin/false riemann
 RUN mkdir /var/lib/riemann && chown riemann:riemann /var/lib/riemann
 
-RUN dnf install -y https://aphyr.com/riemann/riemann-0.2.11-1.noarch.rpm &&\
+RUN dnf install -y https://github.com/riemann/riemann/releases/download/0.2.12/riemann-0.2.12-1.noarch.rpm &&\
     dnf clean all
 
 ADD riemann.config /etc/riemann/riemann.config
