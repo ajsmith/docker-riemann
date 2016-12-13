@@ -12,7 +12,7 @@ RUN yum install -y --disablerepo=* --enablerepo=rhel-7-server-rpms https://dl.fe
 
 ADD riemann.config /etc/riemann/riemann.config
 
-EXPOSE 5555 5556
+EXPOSE 2003 5555 5556
 
 WORKDIR /var/lib/riemann
 USER riemann
