@@ -6,14 +6,17 @@ Red Hat Enterprise Linux.
 
 # Base Images
 
-- Fedora 24
-- RHEL 7.2
+- Fedora 25
+- RHEL 7.3
 
 
 # Requirements
 
+The Fedora image has no special requirements outside of a normal Docker
+operating environment.
+
 Building the RHEL version of the image requires an active subscription for
-Fedora and Red Hat Enterprise Linux Server.
+Red Hat Enterprise Linux Server.
 
 
 # Building
